@@ -38,10 +38,10 @@ class GenEmail():
             xing = unidecode(name[0]).replace(' ', '').lower()
             xing_s = xing[0].lower()
             ming = unidecode(name[1:]).replace(' ', '').lower()
-            ming_s = ''.join(unidecode(c)[0].lower() for c in name[1:]) 
+            ming_s = ''.join(unidecode(c)[0].lower() for c in name[1:])
             return Person._make([name, xing, xing_s, ming, ming_s])
         # ignore names with more than 3 charaters for now
-        self.names_detail = tuple(make_person(name) for name in self.names if len(name) <= 3) 
+        self.names_detail = tuple(make_person(name) for name in self.names if len(name) <= 3)
         print('students with name 2,3: %d' % len(self.names_detail))
         del self.names
         print(self.names_detail[:20])
